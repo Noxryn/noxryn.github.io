@@ -1,28 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Noxryn&#39;s Blog</title>
-    <link>https://www.noxryn.cn/</link>
-    <description>Recent content on Noxryn&#39;s Blog</description>
-    <generator>Hugo</generator>
-    
-    <language>zh</language>
-    <copyright>2026 Noxryn · CC BY-NC-SA 4.0</copyright>
-    <lastBuildDate>Tue, 07 Jul 2026 22:17:49 +0800</lastBuildDate>
-    <atom:link href="https://www.noxryn.cn/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hello_world</title>
-      <link>https://www.noxryn.cn/posts/hello_world/</link>
-      <pubDate>Tue, 07 Jul 2026 22:17:49 +0800</pubDate>
-      <guid>https://www.noxryn.cn/posts/hello_world/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>关于我</title>
-      <link>https://www.noxryn.cn/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.noxryn.cn/about/</guid>
-      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Noxryn's Blog</title><link>https://www.noxryn.cn/</link><description>Recent content on Noxryn's Blog</description><generator>Hugo</generator><language>zh</language><copyright>2026 Noxryn · CC BY-NC-SA 4.0</copyright><lastBuildDate>Tue, 07 Jul 2026 22:17:49 +0800</lastBuildDate><atom:link href="https://www.noxryn.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello_world</title><link>https://www.noxryn.cn/posts/hello_world/</link><pubDate>Tue, 07 Jul 2026 22:17:49 +0800</pubDate><guid>https://www.noxryn.cn/posts/hello_world/</guid><description/></item><item><title>关于我</title><link>https://www.noxryn.cn/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.noxryn.cn/about/</guid><description>&lt;h2 id="简介"&gt;简介&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Noxryn&lt;/strong&gt;&lt;br&gt;
 一名从事服务器开发的菜鸟，始终怀着不懈的好奇心进行编程。&lt;br&gt;
 这个专栏记录了我的代码足迹、对技术的热情，以及在开源世界中的探索之旅。&lt;br&gt;
@@ -34,23 +10,20 @@ A server developer still in the crawling phase, but coding with relentless curio
 This section records my code trails, my passion for technology, and my exploration journey in the open-source world.&lt;br&gt;
 &lt;em&gt;&lt;strong&gt;From zero to hero, one line at a time.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;友链&#34;&gt;友链&lt;/h2&gt;
-&lt;h2 id=&#34;讨论&#34;&gt;讨论&lt;/h2&gt;
-&lt;h2 id=&#34;日志&#34;&gt;日志&lt;/h2&gt;
+&lt;h2 id="友链"&gt;友链&lt;/h2&gt;
+&lt;h2 id="讨论"&gt;讨论&lt;/h2&gt;
+&lt;h2 id="日志"&gt;日志&lt;/h2&gt;
 &lt;table&gt;
-	&lt;thead&gt;
-			&lt;tr&gt;
-					&lt;th&gt;日期&lt;/th&gt;
-					&lt;th&gt;记录&lt;/th&gt;
-			&lt;/tr&gt;
-	&lt;/thead&gt;
-	&lt;tbody&gt;
-			&lt;tr&gt;
-					&lt;td&gt;2026-07-08&lt;/td&gt;
-					&lt;td&gt;部署 hugo&lt;/td&gt;
-			&lt;/tr&gt;
-	&lt;/tbody&gt;
-&lt;/table&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;日期&lt;/th&gt;
+&lt;th&gt;记录&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2026-07-08&lt;/td&gt;
+&lt;td&gt;部署 hugo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item></channel></rss>
