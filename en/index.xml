@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Noxryn's Blog</title><link>https://www.noxryn.cn/en/</link><description>Recent content on Noxryn's Blog</description><generator>Hugo</generator><language>en</language><copyright>2026 Noxryn · CC BY-NC-SA 4.0</copyright><lastBuildDate>Fri, 17 Jul 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://www.noxryn.cn/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World - Test Article</title><link>https://www.noxryn.cn/en/posts/hello-world/</link><pubDate>Fri, 17 Jul 2026 10:00:00 +0800</pubDate><guid>https://www.noxryn.cn/en/posts/hello-world/</guid><description>&lt;p&gt;This is an English article for testing multilingual support.&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This article verifies that the Hugo multilingual configuration is correct and that i18n translations work properly.&lt;/p&gt;
+&lt;h2 id="test-points"&gt;Test Points&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;English content renders correctly&lt;/li&gt;
+&lt;li&gt;Menu uses i18n to display English names&lt;/li&gt;
+&lt;li&gt;Page title and description switch by language&lt;/li&gt;
+&lt;li&gt;Archive and search page content is in column 2&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="code-example"&gt;Code Example&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;hello&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>menu_about</title><link>https://www.noxryn.cn/en/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.noxryn.cn/en/about/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Noxryn&lt;/strong&gt;&lt;br&gt;
+A server developer still in the crawling phase, but coding with relentless curiosity.&lt;br&gt;
+This section records my code trails, my passion for technology, and my exploration journey in the open-source world.&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;From zero to hero, one line at a time.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id="friends"&gt;Friends&lt;/h2&gt;
+&lt;h2 id="changelog"&gt;Changelog&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;th&gt;Note&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2026-07-08&lt;/td&gt;
+&lt;td&gt;Deployed hugo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2026-07-18&lt;/td&gt;
+&lt;td&gt;Reconstruct the website page layout&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item></channel></rss>
