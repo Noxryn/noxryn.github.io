@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Noxryn's Blog</title><link>https://www.noxryn.cn/</link><description>Recent content on Noxryn's Blog</description><generator>Hugo</generator><language>zh</language><copyright>2026 Noxryn · CC BY-NC-SA 4.0</copyright><lastBuildDate>Fri, 17 Jul 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://www.noxryn.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World - 测试文章</title><link>https://www.noxryn.cn/posts/hello-world/</link><pubDate>Fri, 17 Jul 2026 10:00:00 +0800</pubDate><guid>https://www.noxryn.cn/posts/hello-world/</guid><description>&lt;p&gt;这是一篇用于测试多语言功能的中文文章。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Noxryn's Blog</title><link>https://www.noxryn.cn/</link><description>Recent content on Noxryn's Blog</description><generator>Hugo</generator><language>zh</language><copyright>2026 Noxryn · CC BY-NC-SA 4.0</copyright><lastBuildDate>Fri, 31 Jul 2026 00:10:00 +0800</lastBuildDate><atom:link href="https://www.noxryn.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>5 分钟速通 Markdown</title><link>https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/</link><pubDate>Fri, 31 Jul 2026 00:10:00 +0800</pubDate><guid>https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/</guid><description>Markdown 语法速查速记，博客文章编写语法，程序员必备 Readme</description></item><item><title>C++ 成长之路 ———— 基础语法篇上</title><link>https://www.noxryn.cn/posts/cc_learning_guide/cc_learning_guide_01/</link><pubDate>Wed, 22 Jul 2026 22:45:12 +0800</pubDate><guid>https://www.noxryn.cn/posts/cc_learning_guide/cc_learning_guide_01/</guid><description>&lt;h1 id="前言"&gt;前言&lt;/h1&gt;
+&lt;p&gt;作为一名从事 C++ 开发的菜鸟，谨以此文记录 C++ 的相关语法，巩固知识体系，以此作为本人成长之路上的鉴证。&lt;/p&gt;
+&lt;h1 id="hello-world"&gt;Hello World!&lt;/h1&gt;
+&lt;h2 id="代码块"&gt;代码块&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-cpp" data-lang="cpp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// helloworld.cc
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt; &lt;/span&gt;&lt;span style="color:#75715e"&gt;// 头文件
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;() &lt;span style="color:#75715e"&gt;// main 函数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; std&lt;span style="color:#f92672"&gt;::&lt;/span&gt;cout &lt;span style="color:#f92672"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span style="color:#f92672"&gt;::&lt;/span&gt;endl;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;; &lt;span style="color:#75715e"&gt;// C++ 中 return 0 可以省略由编译器自动添加
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上述代码即为最简单的 C++ 程序：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;头文件引入标准库&lt;code&gt;&amp;lt;iostream&amp;gt;&lt;/code&gt;，这将提供 IO 操作等标准库函数&lt;/li&gt;
+&lt;li&gt;每个 C++ 程序都包含一个或多个函数，其中必须有且仅有一个名为 main() 的全局函数，程序从此开始&lt;/li&gt;
+&lt;li&gt;语句作为 C++ 语言中最小的的独立计算单元，绝大多数以 &lt;code&gt;;&lt;/code&gt; 结尾&lt;/li&gt;
+&lt;li&gt;函数由返回类型、函数名、参数列表、函数体组成，用于完成特定的工作或执行一组操作&lt;/li&gt;
+&lt;li&gt;C++ 程序文件后缀名为 &lt;code&gt;cpp&lt;/code&gt;、&lt;code&gt;cc&lt;/code&gt;、&lt;code&gt;cxx&lt;/code&gt;等，具体由编译器约定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="编译运行"&gt;编译、运行&lt;/h2&gt;
+&lt;p&gt;高级语言编写的代码文件必须由编译器编译链接为可执行文件才能使用，目前主流的编译器有 gcc、clang、msvc。比起纯编译器，直接使用集成编译环境（IDE）更加方便如 Visual Studio、Clion等。&lt;br&gt;
+本文重点关注语法，编程环境及工具只简单提及，请自行搭建安装。&lt;/p&gt;
+&lt;p&gt;本文所有代码皆使用 vscode + wsl 环境使用 g++ 编译运行，c++20 等新特性由于编译器支持限制转而使用 Visual Studio 2026。
+命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;g++ helloworld.cc -o hellowold
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./helloworld
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt="helloworld" decoding="async" loading="lazy" src="https://cdn.jsdelivr.net/gh/Noxryn/Img@main/helloworld.png" style="max-width: 100%; height: auto;"&gt;&lt;/p&gt;</description></item><item><title>Hello World - 测试文章</title><link>https://www.noxryn.cn/posts/hello-world/</link><pubDate>Fri, 17 Jul 2026 10:00:00 +0800</pubDate><guid>https://www.noxryn.cn/posts/hello-world/</guid><description>&lt;p&gt;这是一篇用于测试多语言功能的中文文章。&lt;/p&gt;
 &lt;h2 id="概述"&gt;概述&lt;/h2&gt;
 &lt;p&gt;本篇文章用于验证 Hugo 多语言配置是否正确，以及 i18n 翻译是否生效。&lt;/p&gt;
 &lt;h2 id="功能测试点"&gt;功能测试点&lt;/h2&gt;

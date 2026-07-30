@@ -1,0 +1,118 @@
+<!doctype html><html lang=zh dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>C++ 成长之路 ———— 基础语法篇上 | Noxryn's Blog</title><meta name=keywords content="C++"><meta name=description content='前言
+作为一名从事 C++ 开发的菜鸟，谨以此文记录 C++ 的相关语法，巩固知识体系，以此作为本人成长之路上的鉴证。
+Hello World!
+代码块
+// helloworld.cc
+
+#include <iostream>  // 头文件
+
+int main()   // main 函数
+{
+  std::cout << "Hello World!" << std::endl;  
+  return 0;  // C++ 中 return 0 可以省略由编译器自动添加
+}
+上述代码即为最简单的 C++ 程序：
+
+头文件引入标准库<iostream>，这将提供 IO 操作等标准库函数
+每个 C++ 程序都包含一个或多个函数，其中必须有且仅有一个名为 main() 的全局函数，程序从此开始
+语句作为 C++ 语言中最小的的独立计算单元，绝大多数以 ; 结尾
+函数由返回类型、函数名、参数列表、函数体组成，用于完成特定的工作或执行一组操作
+C++ 程序文件后缀名为 cpp、cc、cxx等，具体由编译器约定
+
+编译、运行
+高级语言编写的代码文件必须由编译器编译链接为可执行文件才能使用，目前主流的编译器有 gcc、clang、msvc。比起纯编译器，直接使用集成编译环境（IDE）更加方便如 Visual Studio、Clion等。
+本文重点关注语法，编程环境及工具只简单提及，请自行搭建安装。
+本文所有代码皆使用 vscode + wsl 环境使用 g++ 编译运行，c++20 等新特性由于编译器支持限制转而使用 Visual Studio 2026。
+命令：
+g++ helloworld.cc -o hellowold
+./helloworld
+'><meta name=author content="Noxryn"><link rel=canonical href=https://www.noxryn.cn/posts/cc_learning_guide/cc_learning_guide_01/><link crossorigin=anonymous href=/assets/css/stylesheet.f8c21644e614e10fd56be771cba4839d81a3b452ead71a21e138041f480e2a4f.css integrity="sha256-+MIWROYU4Q/Va+dxy6SDnYGjtFLq1xoh4TgEH0gOKk8=" rel="preload stylesheet" as=style><link rel=icon href=https://www.noxryn.cn/images/favicon.png><link rel=icon type=image/png sizes=16x16 href=https://www.noxryn.cn/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://www.noxryn.cn/favicon-32x32.png><link rel=apple-touch-icon href=https://www.noxryn.cn/apple-touch-icon.png><link rel=mask-icon href=https://www.noxryn.cn/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh href=https://www.noxryn.cn/posts/cc_learning_guide/cc_learning_guide_01/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=preload href=/fonts/inter-7.ttf as=font type=font/ttf crossorigin><meta property="og:url" content="https://www.noxryn.cn/posts/cc_learning_guide/cc_learning_guide_01/"><meta property="og:site_name" content="Noxryn's Blog"><meta property="og:title" content="C++ 成长之路 ———— 基础语法篇上"><meta property="og:description" content='前言 作为一名从事 C++ 开发的菜鸟，谨以此文记录 C++ 的相关语法，巩固知识体系，以此作为本人成长之路上的鉴证。
+Hello World! 代码块 // helloworld.cc #include <iostream> // 头文件 int main() // main 函数 { std::cout << "Hello World!" << std::endl; return 0; // C++ 中 return 0 可以省略由编译器自动添加 } 上述代码即为最简单的 C++ 程序：
+头文件引入标准库<iostream>，这将提供 IO 操作等标准库函数 每个 C++ 程序都包含一个或多个函数，其中必须有且仅有一个名为 main() 的全局函数，程序从此开始 语句作为 C++ 语言中最小的的独立计算单元，绝大多数以 ; 结尾 函数由返回类型、函数名、参数列表、函数体组成，用于完成特定的工作或执行一组操作 C++ 程序文件后缀名为 cpp、cc、cxx等，具体由编译器约定 编译、运行 高级语言编写的代码文件必须由编译器编译链接为可执行文件才能使用，目前主流的编译器有 gcc、clang、msvc。比起纯编译器，直接使用集成编译环境（IDE）更加方便如 Visual Studio、Clion等。
+本文重点关注语法，编程环境及工具只简单提及，请自行搭建安装。
+本文所有代码皆使用 vscode + wsl 环境使用 g++ 编译运行，c++20 等新特性由于编译器支持限制转而使用 Visual Studio 2026。 命令：
+g++ helloworld.cc -o hellowold ./helloworld'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-07-22T22:45:12+08:00"><meta property="article:modified_time" content="2026-07-22T22:45:12+08:00"><meta property="article:tag" content="C++"><meta name=twitter:card content="summary"><meta name=twitter:title content="C++ 成长之路 ———— 基础语法篇上"><meta name=twitter:description content='前言 作为一名从事 C++ 开发的菜鸟，谨以此文记录 C++ 的相关语法，巩固知识体系，以此作为本人成长之路上的鉴证。
+Hello World! 代码块 // helloworld.cc #include <iostream> // 头文件 int main() // main 函数 { std::cout << "Hello World!" << std::endl; return 0; // C++ 中 return 0 可以省略由编译器自动添加 } 上述代码即为最简单的 C++ 程序：
+头文件引入标准库<iostream>，这将提供 IO 操作等标准库函数 每个 C++ 程序都包含一个或多个函数，其中必须有且仅有一个名为 main() 的全局函数，程序从此开始 语句作为 C++ 语言中最小的的独立计算单元，绝大多数以 ; 结尾 函数由返回类型、函数名、参数列表、函数体组成，用于完成特定的工作或执行一组操作 C++ 程序文件后缀名为 cpp、cc、cxx等，具体由编译器约定 编译、运行 高级语言编写的代码文件必须由编译器编译链接为可执行文件才能使用，目前主流的编译器有 gcc、clang、msvc。比起纯编译器，直接使用集成编译环境（IDE）更加方便如 Visual Studio、Clion等。
+本文重点关注语法，编程环境及工具只简单提及，请自行搭建安装。
+本文所有代码皆使用 vscode + wsl 环境使用 g++ 编译运行，c++20 等新特性由于编译器支持限制转而使用 Visual Studio 2026。 命令：
+g++ helloworld.cc -o hellowold ./helloworld'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"C++ 成长之路 ———— 基础语法篇上","item":"https://www.noxryn.cn/posts/cc_learning_guide/cc_learning_guide_01/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"C++ 成长之路 ———— 基础语法篇上","name":"C\u002b\u002b 成长之路 ———— 基础语法篇上","description":"前言 作为一名从事 C++ 开发的菜鸟，谨以此文记录 C++ 的相关语法，巩固知识体系，以此作为本人成长之路上的鉴证。\nHello World! 代码块 // helloworld.cc #include \u0026lt;iostream\u0026gt; // 头文件 int main() // main 函数 { std::cout \u0026lt;\u0026lt; \u0026#34;Hello World!\u0026#34; \u0026lt;\u0026lt; std::endl; return 0; // C++ 中 return 0 可以省略由编译器自动添加 } 上述代码即为最简单的 C++ 程序：\n头文件引入标准库\u0026lt;iostream\u0026gt;，这将提供 IO 操作等标准库函数 每个 C++ 程序都包含一个或多个函数，其中必须有且仅有一个名为 main() 的全局函数，程序从此开始 语句作为 C++ 语言中最小的的独立计算单元，绝大多数以 ; 结尾 函数由返回类型、函数名、参数列表、函数体组成，用于完成特定的工作或执行一组操作 C++ 程序文件后缀名为 cpp、cc、cxx等，具体由编译器约定 编译、运行 高级语言编写的代码文件必须由编译器编译链接为可执行文件才能使用，目前主流的编译器有 gcc、clang、msvc。比起纯编译器，直接使用集成编译环境（IDE）更加方便如 Visual Studio、Clion等。\n本文重点关注语法，编程环境及工具只简单提及，请自行搭建安装。\n本文所有代码皆使用 vscode + wsl 环境使用 g++ 编译运行，c++20 等新特性由于编译器支持限制转而使用 Visual Studio 2026。 命令：\ng++ helloworld.cc -o hellowold ./helloworld ","keywords":["C++"],"articleBody":"前言 作为一名从事 C++ 开发的菜鸟，谨以此文记录 C++ 的相关语法，巩固知识体系，以此作为本人成长之路上的鉴证。\nHello World! 代码块 // helloworld.cc #include // 头文件 int main() // main 函数 { std::cout \u003c\u003c \"Hello World!\" \u003c\u003c std::endl; return 0; // C++ 中 return 0 可以省略由编译器自动添加 } 上述代码即为最简单的 C++ 程序：\n头文件引入标准库，这将提供 IO 操作等标准库函数 每个 C++ 程序都包含一个或多个函数，其中必须有且仅有一个名为 main() 的全局函数，程序从此开始 语句作为 C++ 语言中最小的的独立计算单元，绝大多数以 ; 结尾 函数由返回类型、函数名、参数列表、函数体组成，用于完成特定的工作或执行一组操作 C++ 程序文件后缀名为 cpp、cc、cxx等，具体由编译器约定 编译、运行 高级语言编写的代码文件必须由编译器编译链接为可执行文件才能使用，目前主流的编译器有 gcc、clang、msvc。比起纯编译器，直接使用集成编译环境（IDE）更加方便如 Visual Studio、Clion等。\n本文重点关注语法，编程环境及工具只简单提及，请自行搭建安装。\n本文所有代码皆使用 vscode + wsl 环境使用 g++ 编译运行，c++20 等新特性由于编译器支持限制转而使用 Visual Studio 2026。 命令：\ng++ helloworld.cc -o hellowold ./helloworld 语法入门 标准输入输出对象 库是 C++ 的标准库，命名空间为 std；使用标准库函数需在函数前添加 std:: ，或使用 using 关键字，如新手常见的 using namespace std;。\n为避免不必要的冲突，请谨慎且最小影响的使用 using 关键字 标准库定义 IO 对象如下，作用同 C 语言的 scanf 和 printf：\n名称 IO 对象 作用 标准输入 cin 同字面 标准输出 cout 同字面 标准错误 cerr 输出警告和错误消息 标准日志 clog 输出程序运行时的一般性信息 注释 注释即直接插入到源代码中的笔记，会被编译器忽略，仅用于记录代码功能，变量含义等辅助信息。\n注释对于程序的可读性帮助极大，正所谓程序员最讨厌的两件事:\n“1.自己要写注释；2.别人不写注释”\nC++ 中存在单行注释和界定符对注释两种：\n单行注释 单行注释以双斜线 // 开始，换行符结束，双斜线右侧的内容被编译器忽略\n多行注释 多行注释顾名思义可以跨越多行，以 /* 开始，*/ 结束，二者之间的内容即为注释 注：\n注释界定符不能嵌套 变量 控制流 循环语句 循环语句即重复执行相同的代码，直至条件不满足。 以1~10求和为例：\nwhile /* while (条件) { ... } */ int sum{0}, i{0}; while (i \u003c 10\u003e) { ++i; // 前缀递增 \u003c=\u003e i = i + 1，先加后赋值 sum += i; // 复合赋值 \u003c=\u003e sum = sum + i } for /* for(初始语句;循环条件;表达式) { ... } // for 语句中，初始语句提供条件变量，循环条件用于终止循环，表达式改变循环变量 */ int sum{0}; for(int i = 1; i \u003c= 10; i++) { sum += i; } do-while /* do { } while (条件) // do-while 语句相较 while 语句，先执行一次循环体在判断是否满足条件 */ int sum{0}, i{0}; do { ++i; sum += i; } while (i \u003c 10); 条件语句 条件语句即判断是否满足某种条件，执行不同分支。\nif /* if (条件1) { ... } else if(条件2) { ... } else { ... } // if 可以单独使用 // 两个分支时 else if 可以省略 // 执行块中只有一行代码时花括号可以省略 */ switch /* */ ","wordCount":"262","inLanguage":"zh","datePublished":"2026-07-22T22:45:12+08:00","dateModified":"2026-07-22T22:45:12+08:00","author":{"@type":"Person","name":"Noxryn"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.noxryn.cn/posts/cc_learning_guide/cc_learning_guide_01/"},"publisher":{"@type":"Organization","name":"Noxryn's Blog","logo":{"@type":"ImageObject","url":"https://www.noxryn.cn/images/favicon.png"}}}</script><script defer src=/js/me_zzz.js data-host-url=https://umami.noxryn.top data-website-id=9eaf73c8-383c-4030-9902-402a6d8e3f61></script></head><body id=top><main class=main><div class=single-page-layout><div class=col-left></div><div class=col-center><header class=header><nav class=header-nav><div class=logo><a href=https://www.noxryn.cn/ accesskey=h title="Noxryn's Blog (Alt + H)">Noxryn's Blog</a></div><ul id=menu class=menu><li><a href=https://www.noxryn.cn/posts/ title=menu_posts><span>文章</span></a></li><li><a href=https://www.noxryn.cn/categories/ title=menu_categories><span>分类</span></a></li><li><a href=https://www.noxryn.cn/archives/ title=menu_archives><span>归档</span></a></li><li><a href=https://www.noxryn.cn/search/ title=menu_search><span>搜索</span></a></li><li><a href=https://www.noxryn.cn/about/ title=menu_about><span>关于</span></a></li></ul><div class=logo-switches><div class=logo-switches-inner><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><ul class=lang-menu><li><a href=https://www.noxryn.cn/en/ title=English aria-label=English><img class="lang-icon light" src=/images/map_n.svg alt=English width=14 height=14>
+<img class="lang-icon dark" src=/images/map_l.svg alt=English width=14 height=14></a></li></ul></div></div></nav></header><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>主页</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href>文章</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">C++ 成长之路 ———— 基础语法篇上</h1><div class=post-meta><span title='2026-07-22 22:45:12 +0800 CST'>七月 22, 2026</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;262 字&nbsp;·&nbsp;Noxryn&nbsp;·&nbsp;</div><div class=post-tags-clamp><a href=https://www.noxryn.cn/tags/c++/>C++</a></div></header><div class="post-content md-content"><h1 id=前言>前言<a hidden class=anchor aria-hidden=true href=#前言>#</a></h1><p>作为一名从事 C++ 开发的菜鸟，谨以此文记录 C++ 的相关语法，巩固知识体系，以此作为本人成长之路上的鉴证。</p><h1 id=hello-world>Hello World!<a hidden class=anchor aria-hidden=true href=#hello-world>#</a></h1><h2 id=代码块>代码块<a hidden class=anchor aria-hidden=true href=#代码块>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#75715e>// helloworld.cc
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>  </span><span style=color:#75715e>// 头文件
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>()   <span style=color:#75715e>// main 函数
+</span></span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;Hello World!&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;  <span style=color:#75715e>// C++ 中 return 0 可以省略由编译器自动添加
+</span></span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>上述代码即为最简单的 C++ 程序：</p><ul><li>头文件引入标准库<code>&lt;iostream></code>，这将提供 IO 操作等标准库函数</li><li>每个 C++ 程序都包含一个或多个函数，其中必须有且仅有一个名为 main() 的全局函数，程序从此开始</li><li>语句作为 C++ 语言中最小的的独立计算单元，绝大多数以 <code>;</code> 结尾</li><li>函数由返回类型、函数名、参数列表、函数体组成，用于完成特定的工作或执行一组操作</li><li>C++ 程序文件后缀名为 <code>cpp</code>、<code>cc</code>、<code>cxx</code>等，具体由编译器约定</li></ul><h2 id=编译运行>编译、运行<a hidden class=anchor aria-hidden=true href=#编译运行>#</a></h2><p>高级语言编写的代码文件必须由编译器编译链接为可执行文件才能使用，目前主流的编译器有 gcc、clang、msvc。比起纯编译器，直接使用集成编译环境（IDE）更加方便如 Visual Studio、Clion等。<br>本文重点关注语法，编程环境及工具只简单提及，请自行搭建安装。</p><p>本文所有代码皆使用 vscode + wsl 环境使用 g++ 编译运行，c++20 等新特性由于编译器支持限制转而使用 Visual Studio 2026。
+命令：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>g++ helloworld.cc -o hellowold
+</span></span><span style=display:flex><span>./helloworld
+</span></span></code></pre></div><p><img alt=helloworld decoding=async loading=lazy src=https://cdn.jsdelivr.net/gh/Noxryn/Img@main/helloworld.png style=max-width:100%;height:auto></p><h2 id=语法入门>语法入门<a hidden class=anchor aria-hidden=true href=#语法入门>#</a></h2><h3 id=标准输入输出对象>标准输入输出对象<a hidden class=anchor aria-hidden=true href=#标准输入输出对象>#</a></h3><p><code>&lt;iostream></code>库是 C++ 的标准库，命名空间为 <code>std</code>；使用标准库函数需在函数前添加 <code>std::</code> ，或使用 <code>using</code> 关键字，如新手常见的 <code>using namespace std;</code>。</p><ul><li>为避免不必要的冲突，请谨慎且最小影响的使用 <code>using</code> 关键字</li></ul><p>标准库定义 IO 对象如下，作用同 C 语言的 <code>scanf</code> 和 <code>printf</code>：</p><table><thead><tr><th>名称</th><th>IO 对象</th><th>作用</th></tr></thead><tbody><tr><td>标准输入</td><td>cin</td><td>同字面</td></tr><tr><td>标准输出</td><td>cout</td><td>同字面</td></tr><tr><td>标准错误</td><td>cerr</td><td>输出警告和错误消息</td></tr><tr><td>标准日志</td><td>clog</td><td>输出程序运行时的一般性信息</td></tr></tbody></table><h3 id=注释>注释<a hidden class=anchor aria-hidden=true href=#注释>#</a></h3><p>注释即直接插入到源代码中的笔记，会被编译器忽略，仅用于记录代码功能，变量含义等辅助信息。<br>注释对于程序的可读性帮助极大，正所谓程序员最讨厌的两件事:</p><blockquote><p>“1.自己要写注释；2.别人不写注释”</p></blockquote><p>C++ 中存在单行注释和界定符对注释两种：</p><ol><li><p>单行注释
+单行注释以双斜线 <code>//</code> 开始，换行符结束，双斜线右侧的内容被编译器忽略</p></li><li><p>多行注释
+多行注释顾名思义可以跨越多行，以 <code>/*</code> 开始，<code>*/</code> 结束，二者之间的内容即为注释
+注：</p><ul><li>注释界定符不能嵌套</li></ul></li></ol><h1 id=变量>变量<a hidden class=anchor aria-hidden=true href=#变量>#</a></h1><h3 id=控制流>控制流<a hidden class=anchor aria-hidden=true href=#控制流>#</a></h3><h3 id=循环语句>循环语句<a hidden class=anchor aria-hidden=true href=#循环语句>#</a></h3><p>循环语句即重复执行相同的代码，直至条件不满足。
+以1~10求和为例：</p><ol><li>while</li></ol><pre tabindex=0><code>/*
+while (条件) {
+  ...
+}
+*/
+
+int sum{0}, i{0};
+while (i &lt; 10&gt;) { 
+  ++i;       // 前缀递增 &lt;=&gt; i = i + 1，先加后赋值
+  sum += i;  // 复合赋值 &lt;=&gt; sum = sum + i
+}
+</code></pre><ol start=2><li>for</li></ol><pre tabindex=0><code>/*
+for(初始语句;循环条件;表达式) {
+  ...
+}
+
+// for 语句中，初始语句提供条件变量，循环条件用于终止循环，表达式改变循环变量
+*/
+int sum{0};
+for(int i = 1; i &lt;= 10; i++) {
+  sum += i;
+}
+</code></pre><ol start=3><li>do-while</li></ol><pre tabindex=0><code>/*
+do {
+
+} while (条件) 
+
+// do-while 语句相较 while 语句，先执行一次循环体在判断是否满足条件
+*/
+int sum{0}, i{0};
+do {
+  ++i;
+  sum += i;
+} while (i &lt; 10);
+</code></pre><h2 id=条件语句>条件语句<a hidden class=anchor aria-hidden=true href=#条件语句>#</a></h2><p>条件语句即判断是否满足某种条件，执行不同分支。</p><ol><li>if</li></ol><pre tabindex=0><code>/*
+if (条件1) {
+  ...
+} else if(条件2) {
+  ...
+} else {
+  ...
+}
+
+// if 可以单独使用
+// 两个分支时 else if 可以省略
+// 执行块中只有一行代码时花括号可以省略
+*/
+</code></pre><ol start=2><li>switch</li></ol><pre tabindex=0><code>/*
+
+*/
+</code></pre></div><footer class=post-footer><nav class=paginav><a class=prev href=https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/><span class=title>« 上一页</span>
+<span>5 分钟速通 Markdown</span>
+</a><a class=next href=https://www.noxryn.cn/posts/hello-world/><span class=title>下一页 »</span>
+<span>Hello World - 测试文章</span></a></nav></footer></article></div><div class=col-right><aside class=single-toc><details class=toc open><summary accesskey=c title="(Alt + C)"><span class=title>目录</span></summary><div class=inner><ul><li><a href=#%e5%89%8d%e8%a8%80 aria-label=前言>前言</a></li><li><a href=#hello-world aria-label="Hello World!">Hello World!</a><ul><li><a href=#%e4%bb%a3%e7%a0%81%e5%9d%97 aria-label=代码块>代码块</a></li><li><a href=#%e7%bc%96%e8%af%91%e8%bf%90%e8%a1%8c aria-label=编译、运行>编译、运行</a></li><li><a href=#%e8%af%ad%e6%b3%95%e5%85%a5%e9%97%a8 aria-label=语法入门>语法入门</a><ul><li><a href=#%e6%a0%87%e5%87%86%e8%be%93%e5%85%a5%e8%be%93%e5%87%ba%e5%af%b9%e8%b1%a1 aria-label=标准输入输出对象>标准输入输出对象</a></li><li><a href=#%e6%b3%a8%e9%87%8a aria-label=注释>注释</a></li></ul></li></ul></li><li><a href=#%e5%8f%98%e9%87%8f aria-label=变量>变量</a><ul><ul><li><a href=#%e6%8e%a7%e5%88%b6%e6%b5%81 aria-label=控制流>控制流</a></li><li><a href=#%e5%be%aa%e7%8e%af%e8%af%ad%e5%8f%a5 aria-label=循环语句>循环语句</a></li></ul><li><a href=#%e6%9d%a1%e4%bb%b6%e8%af%ad%e5%8f%a5 aria-label=条件语句>条件语句</a></li></ul></li></ul></div></details><script>(function(){var s,e=document.querySelector(".single-toc"),t=document.querySelector(".post-content")?.querySelectorAll("h1,h2,h3,h4,h5,h6"),n=t&&t[0];e&&n&&(s=n.getBoundingClientRect().top-e.getBoundingClientRect().top+100,e.style.marginTop=s+"px")})()</script></aside></div></div></main><footer class=footer><span>© 2026 Noxryn · <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/>CC BY-NC-SA 4.0</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>(function(){var e=document.createElement("div");e.className="qq-toast",document.body.appendChild(e);function t(e){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(e);else{var t=document.createElement("textarea");t.value=e,t.style.position="fixed",t.style.left="-9999px",document.body.appendChild(t),t.select();try{document.execCommand("copy")}catch{}document.body.removeChild(t)}}document.querySelectorAll(".qq-link").forEach(function(n){var s=!1;n.addEventListener("click",function(o){if(!s){o.preventDefault();var i=n.getAttribute("data-qq");t(i),e.textContent="已复制: "+i,e.classList.add("active"),setTimeout(function(){e.classList.remove("active")},2e3),s=!0}})})})()</script><script>let menu=document.getElementById("menu");if(menu){const n=localStorage.getItem("menu-scroll-position");n&&(menu.scrollLeft=parseInt(n,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)};let e=!1,s,o,t=!1;menu.addEventListener("mousedown",function(n){e=!0,t=!1,menu.classList.add("dragging"),s=n.pageX-menu.offsetLeft,o=menu.scrollLeft}),menu.addEventListener("mouseleave",function(){e=!1,menu.classList.remove("dragging")}),menu.addEventListener("mouseup",function(){e=!1,menu.classList.remove("dragging")}),menu.addEventListener("mousemove",function(n){if(!e)return;n.preventDefault();const a=n.pageX-menu.offsetLeft,i=(a-s)*1.5;(i<0?-i:i)>5&&(t=!0),menu.scrollLeft=o-i}),menu.addEventListener("click",function(e){t&&(e.preventDefault(),e.stopPropagation())})}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="复制";function s(){t.innerHTML="已复制！",setTimeout(()=>{t.innerHTML="复制"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
