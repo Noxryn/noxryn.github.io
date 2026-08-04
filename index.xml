@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Noxryn's Blog</title><link>https://www.noxryn.cn/</link><description>Recent content on Noxryn's Blog</description><generator>Hugo</generator><language>zh</language><copyright>2026 Noxryn · CC BY-NC-SA 4.0</copyright><lastBuildDate>Fri, 31 Jul 2026 00:10:00 +0800</lastBuildDate><atom:link href="https://www.noxryn.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>5 分钟速通 Markdown</title><link>https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/</link><pubDate>Fri, 31 Jul 2026 00:10:00 +0800</pubDate><guid>https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/</guid><description>Markdown 语法速查速记，博客文章编写语法，程序员必备 Readme</description></item><item><title>C++ 成长之路 ———— 基础语法篇上</title><link>https://www.noxryn.cn/posts/cc_learning_guide/cc_learning_guide_01/</link><pubDate>Wed, 22 Jul 2026 22:45:12 +0800</pubDate><guid>https://www.noxryn.cn/posts/cc_learning_guide/cc_learning_guide_01/</guid><description>&lt;h1 id="前言"&gt;前言&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Noxryn's Blog</title><link>https://www.noxryn.cn/</link><description>Recent content on Noxryn's Blog</description><generator>Hugo</generator><language>zh</language><copyright>2026 Noxryn · CC BY-NC-SA 4.0</copyright><lastBuildDate>Wed, 05 Aug 2026 00:22:48 +0800</lastBuildDate><atom:link href="https://www.noxryn.cn/index.xml" rel="self" type="application/rss+xml"/><item><title>Python_learning_basic</title><link>https://www.noxryn.cn/posts/python_learning/python_learning_basic/</link><pubDate>Wed, 05 Aug 2026 00:22:48 +0800</pubDate><guid>https://www.noxryn.cn/posts/python_learning/python_learning_basic/</guid><description>Python 基础语法 v0.1</description></item><item><title>5 分钟速通 Markdown</title><link>https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/</link><pubDate>Fri, 31 Jul 2026 00:10:00 +0800</pubDate><guid>https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/</guid><description>Markdown 语法速查速记，博客文章编写语法，程序员必备 Readme</description></item><item><title>C++ 成长之路 ———— 基础语法篇上</title><link>https://www.noxryn.cn/posts/cc_learning_guide/cc_learning_guide_01/</link><pubDate>Wed, 22 Jul 2026 22:45:12 +0800</pubDate><guid>https://www.noxryn.cn/posts/cc_learning_guide/cc_learning_guide_01/</guid><description>&lt;h1 id="前言"&gt;前言&lt;/h1&gt;
 &lt;p&gt;作为一名从事 C++ 开发的菜鸟，谨以此文记录 C++ 的相关语法，巩固知识体系，以此作为本人成长之路上的鉴证。&lt;/p&gt;
 &lt;h1 id="hello-world"&gt;Hello World!&lt;/h1&gt;
 &lt;h2 id="代码块"&gt;代码块&lt;/h2&gt;
@@ -26,20 +26,7 @@
 命令：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;g++ helloworld.cc -o hellowold
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;./helloworld
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt="helloworld" decoding="async" loading="lazy" src="https://cdn.jsdelivr.net/gh/Noxryn/Img@main/helloworld.png" style="max-width: 100%; height: auto;"&gt;&lt;/p&gt;</description></item><item><title>Hello World - 测试文章</title><link>https://www.noxryn.cn/posts/hello-world/</link><pubDate>Fri, 17 Jul 2026 10:00:00 +0800</pubDate><guid>https://www.noxryn.cn/posts/hello-world/</guid><description>&lt;p&gt;这是一篇用于测试多语言功能的中文文章。&lt;/p&gt;
-&lt;h2 id="概述"&gt;概述&lt;/h2&gt;
-&lt;p&gt;本篇文章用于验证 Hugo 多语言配置是否正确，以及 i18n 翻译是否生效。&lt;/p&gt;
-&lt;h2 id="功能测试点"&gt;功能测试点&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;中文内容正确显示&lt;/li&gt;
-&lt;li&gt;菜单栏使用 i18n 渲染中文名称&lt;/li&gt;
-&lt;li&gt;页面标题和描述按语言切换&lt;/li&gt;
-&lt;li&gt;归档页和搜索页内容位于第 2 栏&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="代码示例"&gt;代码示例&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;hello&lt;/span&gt;():
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; print(&lt;span style="color:#e6db74"&gt;&amp;#34;你好，世界！&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>menu_about</title><link>https://www.noxryn.cn/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.noxryn.cn/about/</guid><description>&lt;h2 id="简介"&gt;简介&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt="helloworld" decoding="async" loading="lazy" src="https://cdn.jsdelivr.net/gh/Noxryn/Img@main/helloworld.png" style="max-width: 100%; height: auto;"&gt;&lt;/p&gt;</description></item><item><title>menu_about</title><link>https://www.noxryn.cn/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.noxryn.cn/about/</guid><description>&lt;h2 id="简介"&gt;简介&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Noxryn&lt;/strong&gt;&lt;br&gt;
 一名从事服务器开发的菜鸟，始终怀着不懈的好奇心进行编程。&lt;br&gt;
 这个专栏记录了我的代码足迹、对技术的热情，以及在开源世界中的探索之旅。&lt;br&gt;
