@@ -8,7 +8,16 @@ This section records my code trails, my passion for technology, and my explorati
 <img class="lang-icon dark" src=/images/map_l.svg alt=English width=14 height=14></a></li></ul></div></div></nav></header><header class=page-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>主页</a>
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
 <a href=/categories/>Categories</a>
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1>Tools</h1></header><article class="post-entry tag-entry"><div class=entry-content-wrapper><header class=entry-header><h2 class=entry-hint-parent>5 分钟速通 Markdown</h2></header><div class=entry-content><p>前言 本文对常用 Markdown 语法的进行了归纳总结，仅供参考
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1>Tools</h1></header><article class="post-entry tag-entry"><div class=entry-content-wrapper><header class=entry-header><h2 class=entry-hint-parent>VS Code 配置 C++ 开发环境</h2></header><div class=entry-content><p>前言 无论什么编程语言编写的程序都必须通过转换为机器码才能被计算机执行，进行这一转换工作的程序就是编译器/解释器。
+二者的区别就是编译器一次性完成翻译工作，解释器则是边翻译边执行。典型的是，C/C++ 使用编译器，Python 使用解释器 1 。 理论上说，只需要编译器和任意文本编辑工具就可以开启编程之路，也就是大神专属的 “记事本编程” 。对于普通程序员而言，使用 IDE 是更佳的选择。 IDE —— 集成开发环境，用于提供程序开发环境，集成了代码编写、语法分析、编译和调试等功能的一体化套件。如 C++ 的 Visual Studio、Java 的 IDEA 和Python 的 PyCharm 等著名 IDE 。 但如何如果你喜欢折腾,焦虑存储空间，需要多语言开发。VS Code 这一个可无限进化的编程工作站，一定要尝试一下。相较于 IDE，它可以配置 C/C++、Java、Python…等你所需要的绝大部分语言，攥写文章也有不错的体验，总之，基于其丰富的插件生态，能够满足你的一切。
+本文将介绍如何搭建 VS Code + C/C++ 编程语言环境，其它语法搭建方式类似（更加简单）。
+软件下载 VS Code 官网下载地址
+下载软件后点击安装即可 (同意许可证、修改安装位置…这些操作依照安装引导执行)
+编译器 VS Code 不是 IDE，本身没有集成 C/C++ 编译器，需要安装对应编译器来支持代码的编译和运行。主流的 C++ 编译器有 MinGW、Clang、MSVC 等，其中 MSVC 是 VS 自带。 可以自行了解其区别。
+MinGW 下载地址，选择x86_64-*-release-win32-seh-ucrt-rt_v14-rev1.7z 版本（受限于网络原因无法下载，请自行解决或寻找其它镜像下载）
+下载完成后自行选择位置解压，如 C:\Program Files。
+将其中 bin 目录位置（C:\Program Files\mingw64\bin）添加到系统环境变量中，添加完成后打开命令提示符输入（g++ -v 或 g++ --version）出现信息即安装完成。 操作步骤：
+...</p></div><footer class=entry-footer><span title='2026-08-25 00:19:03 +0800 CST'>八月 25, 2026</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;109 字&nbsp;·&nbsp;Noxryn&nbsp;·&nbsp;</footer></div><div class=entry-cover-wrapper></div><a class=entry-link aria-label="post link to VS Code 配置 C++ 开发环境" href=https://www.noxryn.cn/posts/kits/vscode_configure_cc/></a></article><article class="post-entry tag-entry"><div class=entry-content-wrapper><header class=entry-header><h2 class=entry-hint-parent>5 分钟速通 Markdown</h2></header><div class=entry-content><p>前言 本文对常用 Markdown 语法的进行了归纳总结，仅供参考
 Markdown 语法简单，只需记忆少量标记即可愉快使用，个人建议花少量时间了解语法后直接练习上手
 Markdown是什么？ Markdown 是一种轻量级的标记语言，可用于在纯文本文档中添加格式化元素。
 Markdown 由 John Gruber 于 2004 年创建，如今已成为世界上最受欢迎的标记语言之一。
