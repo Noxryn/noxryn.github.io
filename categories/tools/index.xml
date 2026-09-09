@@ -1,1 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tools on Noxryn's Blog</title><link>https://www.noxryn.cn/categories/tools/</link><description>Recent content in Tools on Noxryn's Blog</description><generator>Hugo</generator><language>zh</language><copyright>2026 Noxryn · CC BY-NC-SA 4.0</copyright><lastBuildDate>Tue, 25 Aug 2026 00:19:03 +0800</lastBuildDate><atom:link href="https://www.noxryn.cn/categories/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code 配置 C++ 开发环境</title><link>https://www.noxryn.cn/posts/kits/vscode_configure_cc/</link><pubDate>Tue, 25 Aug 2026 00:19:03 +0800</pubDate><guid>https://www.noxryn.cn/posts/kits/vscode_configure_cc/</guid><description>本文介绍如何搭建 VS Code + C/C++ 编程语言环境</description></item><item><title>5 分钟速通 Markdown</title><link>https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/</link><pubDate>Fri, 31 Jul 2026 00:10:00 +0800</pubDate><guid>https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/</guid><description>Markdown 语法速查速记，博客文章编写语法，程序员必备 Readme</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tools on Noxryn's Blog</title><link>https://www.noxryn.cn/categories/tools/</link><description>Recent content in Tools on Noxryn's Blog</description><generator>Hugo</generator><language>zh</language><copyright>2026 Noxryn · CC BY-NC-SA 4.0</copyright><lastBuildDate>Thu, 10 Sep 2026 00:20:40 +0800</lastBuildDate><atom:link href="https://www.noxryn.cn/categories/tools/index.xml" rel="self" type="application/rss+xml"/><item><title>Git 命令速览</title><link>https://www.noxryn.cn/posts/kits/git_command_quick/</link><pubDate>Thu, 10 Sep 2026 00:20:40 +0800</pubDate><guid>https://www.noxryn.cn/posts/kits/git_command_quick/</guid><description>&lt;h1 id="前言"&gt;前言&lt;/h1&gt;
+&lt;p&gt;本文记录 Git 软件安装及使用命令。作为著名的版本控制工具之一，掌握少量命令即可自由使用 Git，满足普通项目的需求，更复杂的分支管理和自建远程库等流程笔者暂未涉及故不做提及；另一广泛使用的版本控制软件 SVN 更多依靠 GUI 界面，使用直观简单，了解 Git 后上手也毫无难度。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="git是什么"&gt;Git是什么？&lt;/h1&gt;
+&lt;p&gt;Git 是一个用于管理源代码的分布式版本控制系统。&lt;br&gt;
+版本控制系统会在您修改文件时记录并保存更改，使用户可以随时恢复以前的工作版本。使用 Git可以轻松访问源代码的修改历史记录以及更改的人，同时防止旧版本的无意覆盖。&lt;br&gt;
+简单来说，就是 Git 可以实现对代码的备份和恢复，不用手动进行复制管理。&lt;/p&gt;
+&lt;h1 id="git命令速成"&gt;Git命令速成&lt;/h1&gt;
+&lt;h2 id="1软件初始配置"&gt;1.软件初始配置&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git config --global user.name &amp;lt;用户名&amp;gt; # 设置用户名
+git config --global user.email &amp;lt;邮箱名&amp;gt; # 设置邮箱
+git config --global core.excludesfile ~/.gitignore_global # 全局gitignore
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="2本地库管理"&gt;2.本地库管理&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git init # 初始本地库
+git status # 查看本地库状态
+git diff # 查看详细更新状态，尚未缓存的改动
+git diff --cached # 查看已缓存的改动
+git diff HEAD # 查看已缓存的与未缓存的所有改动
+git diff --stat # 显示摘要而非整个diff
+git add &amp;lt;文件名&amp;gt; # 添加暂存区
+git rm --cached &amp;lt;文件名&amp;gt; # 删除暂存区文件
+git mv &amp;lt;old text&amp;gt; &amp;lt;new text&amp;gt; # 移动或重命名一个文件、目录、软连接
+git commit -m &amp;#34;&amp;lt;日志信息&amp;gt;&amp;#34; &amp;lt;文件名&amp;gt; # 提交本地库
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="3查看历史记录"&gt;3.查看历史记录&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git reflog
+git log [-options] # 详细信息
+# –oneline # 查看历史记录的简洁版本
+# –graph # 查看历史中什么时候出现了分支、合并
+# –reverse # 逆向显示所有日志
+# –author # 查找指定用户的提交日志
+# –since、–before、 --until、–after # 定筛选日期
+# –no-merges # 选项以隐藏合并提交
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="4标签"&gt;4.标签&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git tag # 查看标签
+git tag -a vx.x # 创建标签
+git tag -a vx.x &amp;lt;哈希值&amp;gt; # 追加标签
+git tag -a &amp;lt;tagname&amp;gt; -m &amp;#34;某某标签&amp;#34; # 指定标签信息
+git tag -s &amp;lt;tagname&amp;gt; -m &amp;#34;某某标签&amp;#34; # PGP签名标签
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="5分支管理"&gt;5.分支管理&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git branch -v # 查看分支
+git branch &amp;lt;分支名&amp;gt; # 创建分支
+git branch -d &amp;lt;分支名&amp;gt; # 删除分支
+git checkout &amp;lt;分支名&amp;gt; # 切换分支
+git checkout &amp;lt;提交记录&amp;gt; # 切换HEAD
+git checkout -b &amp;lt;分支名&amp;gt; # 创建并切换分支
+git merge &amp;lt;要合并的分支&amp;gt; # 合并分支,合并冲突解决后提交本地库时不加文件名
+git rebase &amp;lt;分支名&amp;gt; # 将当前分支复制到指定分支
+git cherry-pick &amp;lt;哈希值&amp;gt; &amp;lt;哈希值&amp;gt; # 将其它分支的指定提交记录复制到当前分支
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="6版本穿梭"&gt;6.版本穿梭&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git reset --hard &amp;lt;版本号&amp;gt; //回退分支，取消已缓存的内容
+git checkout HEAD^ //移动到当前位置的父节点位置
+git branch -f &amp;lt;分支名&amp;gt; HEAD~num //移动分支到num前
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="7远程仓库管理"&gt;7.远程仓库管理&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git clone &amp;lt;远程链接&amp;gt; # 克隆仓库
+ssh -keygen -t rsa -C 远仓ssh地址 # git生成ssh公钥
+git remote -v # 查看远程库信息
+git remote add &amp;lt;别名&amp;gt; &amp;lt;远程库地址&amp;gt; # 关联远程库
+git remote remove &amp;lt;远程库别名&amp;gt; # 删除关联库
+git remote rename &amp;lt;旧别名&amp;gt; &amp;lt;新别名&amp;gt; # 修改关联库名称
+git remote set-url &amp;lt;别名&amp;gt; &amp;lt;新链接&amp;gt; # 重设远程库地址
+git push &amp;lt;远程库别名&amp;gt; &amp;lt;分支名&amp;gt; # 推送远程库
+git pull &amp;lt;远程库别名&amp;gt; &amp;lt;分支名&amp;gt; # 拉取远程库
+git fetch &amp;lt;远程库别名&amp;gt; # 拉取远程库最新数据，不自动合并
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="8gitignore文件"&gt;8.gitignore文件&lt;/h2&gt;
+&lt;p&gt;gitignore文件用使Git忽略指定文件。&lt;/p&gt;</description></item><item><title>5 分钟速通 Markdown</title><link>https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/</link><pubDate>Fri, 31 Jul 2026 00:10:00 +0800</pubDate><guid>https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/</guid><description>Markdown 语法速查速记，博客文章编写语法，程序员必备 Readme</description></item></channel></rss>

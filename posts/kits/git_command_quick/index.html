@@ -1,0 +1,167 @@
+<!doctype html><html lang=zh dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Git 命令速览 | Noxryn's Blog</title><meta name=keywords content="Git"><meta name=description content='前言
+本文记录 Git 软件安装及使用命令。作为著名的版本控制工具之一，掌握少量命令即可自由使用 Git，满足普通项目的需求，更复杂的分支管理和自建远程库等流程笔者暂未涉及故不做提及；另一广泛使用的版本控制软件 SVN 更多依靠 GUI 界面，使用直观简单，了解 Git 后上手也毫无难度。
+
+Git是什么？
+Git 是一个用于管理源代码的分布式版本控制系统。
+版本控制系统会在您修改文件时记录并保存更改，使用户可以随时恢复以前的工作版本。使用 Git可以轻松访问源代码的修改历史记录以及更改的人，同时防止旧版本的无意覆盖。
+简单来说，就是 Git 可以实现对代码的备份和恢复，不用手动进行复制管理。
+Git命令速成
+1.软件初始配置
+git config --global user.name <用户名> # 设置用户名
+git config --global user.email <邮箱名> # 设置邮箱
+git config --global core.excludesfile ~/.gitignore_global # 全局gitignore
+2.本地库管理
+git init # 初始本地库
+git status # 查看本地库状态
+git diff # 查看详细更新状态，尚未缓存的改动
+git diff --cached # 查看已缓存的改动
+git diff HEAD # 查看已缓存的与未缓存的所有改动
+git diff --stat # 显示摘要而非整个diff
+git add <文件名> # 添加暂存区
+git rm --cached <文件名> # 删除暂存区文件
+git mv <old text> <new text> # 移动或重命名一个文件、目录、软连接
+git commit -m "<日志信息>" <文件名> # 提交本地库
+3.查看历史记录
+git reflog
+git log [-options] # 详细信息
+   # –oneline # 查看历史记录的简洁版本
+   # –graph # 查看历史中什么时候出现了分支、合并
+   # –reverse # 逆向显示所有日志
+   # –author # 查找指定用户的提交日志
+   # –since、–before、 --until、–after # 定筛选日期
+   # –no-merges # 选项以隐藏合并提交
+4.标签
+git tag # 查看标签
+git tag -a vx.x # 创建标签
+git tag -a vx.x <哈希值> # 追加标签
+git tag -a <tagname> -m "某某标签"  # 指定标签信息
+git tag -s <tagname> -m "某某标签" # PGP签名标签
+5.分支管理
+git branch -v # 查看分支
+git branch <分支名> # 创建分支
+git branch -d  <分支名> # 删除分支
+git checkout <分支名> # 切换分支
+git checkout <提交记录> # 切换HEAD
+git checkout -b <分支名>  # 创建并切换分支
+git merge <要合并的分支>  # 合并分支,合并冲突解决后提交本地库时不加文件名
+git rebase <分支名> # 将当前分支复制到指定分支
+git cherry-pick <哈希值> <哈希值> # 将其它分支的指定提交记录复制到当前分支
+6.版本穿梭
+git reset --hard <版本号> //回退分支，取消已缓存的内容
+git checkout HEAD^ //移动到当前位置的父节点位置
+git branch -f <分支名> HEAD~num //移动分支到num前
+7.远程仓库管理
+git clone <远程链接> # 克隆仓库
+ssh -keygen -t rsa -C 远仓ssh地址 # git生成ssh公钥
+git remote -v # 查看远程库信息
+git remote add <别名> <远程库地址> # 关联远程库
+git remote remove <远程库别名> # 删除关联库
+git remote rename <旧别名> <新别名> # 修改关联库名称
+git remote set-url <别名> <新链接> # 重设远程库地址
+git push <远程库别名> <分支名>  # 推送远程库
+git pull <远程库别名> <分支名>  # 拉取远程库
+git fetch <远程库别名>  # 拉取远程库最新数据，不自动合并
+8.gitignore文件
+gitignore文件用使Git忽略指定文件。'><meta name=author content="Noxryn"><link rel=canonical href=https://www.noxryn.cn/posts/kits/git_command_quick/><link crossorigin=anonymous href=/assets/css/stylesheet.f8c21644e614e10fd56be771cba4839d81a3b452ead71a21e138041f480e2a4f.css integrity="sha256-+MIWROYU4Q/Va+dxy6SDnYGjtFLq1xoh4TgEH0gOKk8=" rel="preload stylesheet" as=style><link rel=icon href=https://www.noxryn.cn/images/favicon.png><link rel=icon type=image/png sizes=16x16 href=https://www.noxryn.cn/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://www.noxryn.cn/favicon-32x32.png><link rel=apple-touch-icon href=https://www.noxryn.cn/apple-touch-icon.png><link rel=mask-icon href=https://www.noxryn.cn/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh href=https://www.noxryn.cn/posts/kits/git_command_quick/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><link rel=preload href=/fonts/inter-7.ttf as=font type=font/ttf crossorigin><meta property="og:url" content="https://www.noxryn.cn/posts/kits/git_command_quick/"><meta property="og:site_name" content="Noxryn's Blog"><meta property="og:title" content="Git 命令速览"><meta property="og:description" content='前言 本文记录 Git 软件安装及使用命令。作为著名的版本控制工具之一，掌握少量命令即可自由使用 Git，满足普通项目的需求，更复杂的分支管理和自建远程库等流程笔者暂未涉及故不做提及；另一广泛使用的版本控制软件 SVN 更多依靠 GUI 界面，使用直观简单，了解 Git 后上手也毫无难度。
+Git是什么？ Git 是一个用于管理源代码的分布式版本控制系统。
+版本控制系统会在您修改文件时记录并保存更改，使用户可以随时恢复以前的工作版本。使用 Git可以轻松访问源代码的修改历史记录以及更改的人，同时防止旧版本的无意覆盖。
+简单来说，就是 Git 可以实现对代码的备份和恢复，不用手动进行复制管理。
+Git命令速成 1.软件初始配置 git config --global user.name <用户名> # 设置用户名 git config --global user.email <邮箱名> # 设置邮箱 git config --global core.excludesfile ~/.gitignore_global # 全局gitignore 2.本地库管理 git init # 初始本地库 git status # 查看本地库状态 git diff # 查看详细更新状态，尚未缓存的改动 git diff --cached # 查看已缓存的改动 git diff HEAD # 查看已缓存的与未缓存的所有改动 git diff --stat # 显示摘要而非整个diff git add <文件名> # 添加暂存区 git rm --cached <文件名> # 删除暂存区文件 git mv <old text> <new text> # 移动或重命名一个文件、目录、软连接 git commit -m "<日志信息>" <文件名> # 提交本地库 3.查看历史记录 git reflog git log [-options] # 详细信息 # –oneline # 查看历史记录的简洁版本 # –graph # 查看历史中什么时候出现了分支、合并 # –reverse # 逆向显示所有日志 # –author # 查找指定用户的提交日志 # –since、–before、 --until、–after # 定筛选日期 # –no-merges # 选项以隐藏合并提交 4.标签 git tag # 查看标签 git tag -a vx.x # 创建标签 git tag -a vx.x <哈希值> # 追加标签 git tag -a <tagname> -m "某某标签" # 指定标签信息 git tag -s <tagname> -m "某某标签" # PGP签名标签 5.分支管理 git branch -v # 查看分支 git branch <分支名> # 创建分支 git branch -d <分支名> # 删除分支 git checkout <分支名> # 切换分支 git checkout <提交记录> # 切换HEAD git checkout -b <分支名> # 创建并切换分支 git merge <要合并的分支> # 合并分支,合并冲突解决后提交本地库时不加文件名 git rebase <分支名> # 将当前分支复制到指定分支 git cherry-pick <哈希值> <哈希值> # 将其它分支的指定提交记录复制到当前分支 6.版本穿梭 git reset --hard <版本号> //回退分支，取消已缓存的内容 git checkout HEAD^ //移动到当前位置的父节点位置 git branch -f <分支名> HEAD~num //移动分支到num前 7.远程仓库管理 git clone <远程链接> # 克隆仓库 ssh -keygen -t rsa -C 远仓ssh地址 # git生成ssh公钥 git remote -v # 查看远程库信息 git remote add <别名> <远程库地址> # 关联远程库 git remote remove <远程库别名> # 删除关联库 git remote rename <旧别名> <新别名> # 修改关联库名称 git remote set-url <别名> <新链接> # 重设远程库地址 git push <远程库别名> <分支名> # 推送远程库 git pull <远程库别名> <分支名> # 拉取远程库 git fetch <远程库别名> # 拉取远程库最新数据，不自动合并 8.gitignore文件 gitignore文件用使Git忽略指定文件。'><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2026-09-10T00:20:40+08:00"><meta property="article:modified_time" content="2026-09-10T00:20:40+08:00"><meta property="article:tag" content="Git"><meta property="og:see_also" content="https://www.noxryn.cn/posts/markdwon/quick_fix_markdown/"><meta name=twitter:card content="summary"><meta name=twitter:title content="Git 命令速览"><meta name=twitter:description content='前言 本文记录 Git 软件安装及使用命令。作为著名的版本控制工具之一，掌握少量命令即可自由使用 Git，满足普通项目的需求，更复杂的分支管理和自建远程库等流程笔者暂未涉及故不做提及；另一广泛使用的版本控制软件 SVN 更多依靠 GUI 界面，使用直观简单，了解 Git 后上手也毫无难度。
+Git是什么？ Git 是一个用于管理源代码的分布式版本控制系统。
+版本控制系统会在您修改文件时记录并保存更改，使用户可以随时恢复以前的工作版本。使用 Git可以轻松访问源代码的修改历史记录以及更改的人，同时防止旧版本的无意覆盖。
+简单来说，就是 Git 可以实现对代码的备份和恢复，不用手动进行复制管理。
+Git命令速成 1.软件初始配置 git config --global user.name <用户名> # 设置用户名 git config --global user.email <邮箱名> # 设置邮箱 git config --global core.excludesfile ~/.gitignore_global # 全局gitignore 2.本地库管理 git init # 初始本地库 git status # 查看本地库状态 git diff # 查看详细更新状态，尚未缓存的改动 git diff --cached # 查看已缓存的改动 git diff HEAD # 查看已缓存的与未缓存的所有改动 git diff --stat # 显示摘要而非整个diff git add <文件名> # 添加暂存区 git rm --cached <文件名> # 删除暂存区文件 git mv <old text> <new text> # 移动或重命名一个文件、目录、软连接 git commit -m "<日志信息>" <文件名> # 提交本地库 3.查看历史记录 git reflog git log [-options] # 详细信息 # –oneline # 查看历史记录的简洁版本 # –graph # 查看历史中什么时候出现了分支、合并 # –reverse # 逆向显示所有日志 # –author # 查找指定用户的提交日志 # –since、–before、 --until、–after # 定筛选日期 # –no-merges # 选项以隐藏合并提交 4.标签 git tag # 查看标签 git tag -a vx.x # 创建标签 git tag -a vx.x <哈希值> # 追加标签 git tag -a <tagname> -m "某某标签" # 指定标签信息 git tag -s <tagname> -m "某某标签" # PGP签名标签 5.分支管理 git branch -v # 查看分支 git branch <分支名> # 创建分支 git branch -d <分支名> # 删除分支 git checkout <分支名> # 切换分支 git checkout <提交记录> # 切换HEAD git checkout -b <分支名> # 创建并切换分支 git merge <要合并的分支> # 合并分支,合并冲突解决后提交本地库时不加文件名 git rebase <分支名> # 将当前分支复制到指定分支 git cherry-pick <哈希值> <哈希值> # 将其它分支的指定提交记录复制到当前分支 6.版本穿梭 git reset --hard <版本号> //回退分支，取消已缓存的内容 git checkout HEAD^ //移动到当前位置的父节点位置 git branch -f <分支名> HEAD~num //移动分支到num前 7.远程仓库管理 git clone <远程链接> # 克隆仓库 ssh -keygen -t rsa -C 远仓ssh地址 # git生成ssh公钥 git remote -v # 查看远程库信息 git remote add <别名> <远程库地址> # 关联远程库 git remote remove <远程库别名> # 删除关联库 git remote rename <旧别名> <新别名> # 修改关联库名称 git remote set-url <别名> <新链接> # 重设远程库地址 git push <远程库别名> <分支名> # 推送远程库 git pull <远程库别名> <分支名> # 拉取远程库 git fetch <远程库别名> # 拉取远程库最新数据，不自动合并 8.gitignore文件 gitignore文件用使Git忽略指定文件。'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Git 命令速览","item":"https://www.noxryn.cn/posts/kits/git_command_quick/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Git 命令速览","name":"Git 命令速览","description":"前言 本文记录 Git 软件安装及使用命令。作为著名的版本控制工具之一，掌握少量命令即可自由使用 Git，满足普通项目的需求，更复杂的分支管理和自建远程库等流程笔者暂未涉及故不做提及；另一广泛使用的版本控制软件 SVN 更多依靠 GUI 界面，使用直观简单，了解 Git 后上手也毫无难度。\nGit是什么？ Git 是一个用于管理源代码的分布式版本控制系统。\n版本控制系统会在您修改文件时记录并保存更改，使用户可以随时恢复以前的工作版本。使用 Git可以轻松访问源代码的修改历史记录以及更改的人，同时防止旧版本的无意覆盖。\n简单来说，就是 Git 可以实现对代码的备份和恢复，不用手动进行复制管理。\nGit命令速成 1.软件初始配置 git config --global user.name \u0026lt;用户名\u0026gt; # 设置用户名 git config --global user.email \u0026lt;邮箱名\u0026gt; # 设置邮箱 git config --global core.excludesfile ~/.gitignore_global # 全局gitignore 2.本地库管理 git init # 初始本地库 git status # 查看本地库状态 git diff # 查看详细更新状态，尚未缓存的改动 git diff --cached # 查看已缓存的改动 git diff HEAD # 查看已缓存的与未缓存的所有改动 git diff --stat # 显示摘要而非整个diff git add \u0026lt;文件名\u0026gt; # 添加暂存区 git rm --cached \u0026lt;文件名\u0026gt; # 删除暂存区文件 git mv \u0026lt;old text\u0026gt; \u0026lt;new text\u0026gt; # 移动或重命名一个文件、目录、软连接 git commit -m \u0026#34;\u0026lt;日志信息\u0026gt;\u0026#34; \u0026lt;文件名\u0026gt; # 提交本地库 3.查看历史记录 git reflog git log [-options] # 详细信息 # –oneline # 查看历史记录的简洁版本 # –graph # 查看历史中什么时候出现了分支、合并 # –reverse # 逆向显示所有日志 # –author # 查找指定用户的提交日志 # –since、–before、 --until、–after # 定筛选日期 # –no-merges # 选项以隐藏合并提交 4.标签 git tag # 查看标签 git tag -a vx.x # 创建标签 git tag -a vx.x \u0026lt;哈希值\u0026gt; # 追加标签 git tag -a \u0026lt;tagname\u0026gt; -m \u0026#34;某某标签\u0026#34; # 指定标签信息 git tag -s \u0026lt;tagname\u0026gt; -m \u0026#34;某某标签\u0026#34; # PGP签名标签 5.分支管理 git branch -v # 查看分支 git branch \u0026lt;分支名\u0026gt; # 创建分支 git branch -d \u0026lt;分支名\u0026gt; # 删除分支 git checkout \u0026lt;分支名\u0026gt; # 切换分支 git checkout \u0026lt;提交记录\u0026gt; # 切换HEAD git checkout -b \u0026lt;分支名\u0026gt; # 创建并切换分支 git merge \u0026lt;要合并的分支\u0026gt; # 合并分支,合并冲突解决后提交本地库时不加文件名 git rebase \u0026lt;分支名\u0026gt; # 将当前分支复制到指定分支 git cherry-pick \u0026lt;哈希值\u0026gt; \u0026lt;哈希值\u0026gt; # 将其它分支的指定提交记录复制到当前分支 6.版本穿梭 git reset --hard \u0026lt;版本号\u0026gt; //回退分支，取消已缓存的内容 git checkout HEAD^ //移动到当前位置的父节点位置 git branch -f \u0026lt;分支名\u0026gt; HEAD~num //移动分支到num前 7.远程仓库管理 git clone \u0026lt;远程链接\u0026gt; # 克隆仓库 ssh -keygen -t rsa -C 远仓ssh地址 # git生成ssh公钥 git remote -v # 查看远程库信息 git remote add \u0026lt;别名\u0026gt; \u0026lt;远程库地址\u0026gt; # 关联远程库 git remote remove \u0026lt;远程库别名\u0026gt; # 删除关联库 git remote rename \u0026lt;旧别名\u0026gt; \u0026lt;新别名\u0026gt; # 修改关联库名称 git remote set-url \u0026lt;别名\u0026gt; \u0026lt;新链接\u0026gt; # 重设远程库地址 git push \u0026lt;远程库别名\u0026gt; \u0026lt;分支名\u0026gt; # 推送远程库 git pull \u0026lt;远程库别名\u0026gt; \u0026lt;分支名\u0026gt; # 拉取远程库 git fetch \u0026lt;远程库别名\u0026gt; # 拉取远程库最新数据，不自动合并 8.gitignore文件 gitignore文件用使Git忽略指定文件。\n","keywords":["Git"],"articleBody":"前言 本文记录 Git 软件安装及使用命令。作为著名的版本控制工具之一，掌握少量命令即可自由使用 Git，满足普通项目的需求，更复杂的分支管理和自建远程库等流程笔者暂未涉及故不做提及；另一广泛使用的版本控制软件 SVN 更多依靠 GUI 界面，使用直观简单，了解 Git 后上手也毫无难度。\nGit是什么？ Git 是一个用于管理源代码的分布式版本控制系统。\n版本控制系统会在您修改文件时记录并保存更改，使用户可以随时恢复以前的工作版本。使用 Git可以轻松访问源代码的修改历史记录以及更改的人，同时防止旧版本的无意覆盖。\n简单来说，就是 Git 可以实现对代码的备份和恢复，不用手动进行复制管理。\nGit命令速成 1.软件初始配置 git config --global user.name \u003c用户名\u003e # 设置用户名 git config --global user.email \u003c邮箱名\u003e # 设置邮箱 git config --global core.excludesfile ~/.gitignore_global # 全局gitignore 2.本地库管理 git init # 初始本地库 git status # 查看本地库状态 git diff # 查看详细更新状态，尚未缓存的改动 git diff --cached # 查看已缓存的改动 git diff HEAD # 查看已缓存的与未缓存的所有改动 git diff --stat # 显示摘要而非整个diff git add \u003c文件名\u003e # 添加暂存区 git rm --cached \u003c文件名\u003e # 删除暂存区文件 git mv # 移动或重命名一个文件、目录、软连接 git commit -m \"\u003c日志信息\u003e\" \u003c文件名\u003e # 提交本地库 3.查看历史记录 git reflog git log [-options] # 详细信息 # –oneline # 查看历史记录的简洁版本 # –graph # 查看历史中什么时候出现了分支、合并 # –reverse # 逆向显示所有日志 # –author # 查找指定用户的提交日志 # –since、–before、 --until、–after # 定筛选日期 # –no-merges # 选项以隐藏合并提交 4.标签 git tag # 查看标签 git tag -a vx.x # 创建标签 git tag -a vx.x \u003c哈希值\u003e # 追加标签 git tag -a -m \"某某标签\" # 指定标签信息 git tag -s -m \"某某标签\" # PGP签名标签 5.分支管理 git branch -v # 查看分支 git branch \u003c分支名\u003e # 创建分支 git branch -d \u003c分支名\u003e # 删除分支 git checkout \u003c分支名\u003e # 切换分支 git checkout \u003c提交记录\u003e # 切换HEAD git checkout -b \u003c分支名\u003e # 创建并切换分支 git merge \u003c要合并的分支\u003e # 合并分支,合并冲突解决后提交本地库时不加文件名 git rebase \u003c分支名\u003e # 将当前分支复制到指定分支 git cherry-pick \u003c哈希值\u003e \u003c哈希值\u003e # 将其它分支的指定提交记录复制到当前分支 6.版本穿梭 git reset --hard \u003c版本号\u003e //回退分支，取消已缓存的内容 git checkout HEAD^ //移动到当前位置的父节点位置 git branch -f \u003c分支名\u003e HEAD~num //移动分支到num前 7.远程仓库管理 git clone \u003c远程链接\u003e # 克隆仓库 ssh -keygen -t rsa -C 远仓ssh地址 # git生成ssh公钥 git remote -v # 查看远程库信息 git remote add \u003c别名\u003e \u003c远程库地址\u003e # 关联远程库 git remote remove \u003c远程库别名\u003e # 删除关联库 git remote rename \u003c旧别名\u003e \u003c新别名\u003e # 修改关联库名称 git remote set-url \u003c别名\u003e \u003c新链接\u003e # 重设远程库地址 git push \u003c远程库别名\u003e \u003c分支名\u003e # 推送远程库 git pull \u003c远程库别名\u003e \u003c分支名\u003e # 拉取远程库 git fetch \u003c远程库别名\u003e # 拉取远程库最新数据，不自动合并 8.gitignore文件 gitignore文件用使Git忽略指定文件。\n# VS Code .vscode/ # C/C++ *.d *.slo *.lo *.o *.obj *.gch *.pch *.so *.dylib *.dll *.mod *.smod *.lai *.la *.a *.lib *.exe *.out *.app /x64/ /x86/ # Java # zip *.zip *.tar.gz *.rar # obsidian .obsidian 日志提交规范 commit message 格式：(): 类型 介绍 脚注 功能 feat 新增功能 merge 代码合并 fix 修复缺陷 sync 同步主线或分支的Bug to 发现bug docs 文档更新 style 格式更新 BREAKING CHANGE 破坏性修改 refactor 重构代码 Closes # 关闭issue perf 性能优化 test 测试用例 chore 其它修改 ci CI配置修改 build 构建系统变更 release 发布新版本 revert 回滚版本 注：以上规范仅供参考，具体按照项目规范或公司要求确定！！！\n","wordCount":"376","inLanguage":"zh","datePublished":"2026-09-10T00:20:40+08:00","dateModified":"2026-09-10T00:20:40+08:00","author":{"@type":"Person","name":"Noxryn"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.noxryn.cn/posts/kits/git_command_quick/"},"publisher":{"@type":"Organization","name":"Noxryn's Blog","logo":{"@type":"ImageObject","url":"https://www.noxryn.cn/images/favicon.png"}}}</script><script defer src=/js/me_zzz.js data-host-url=https://umami.noxryn.top data-website-id=9eaf73c8-383c-4030-9902-402a6d8e3f61></script></head><body id=top><main class=main><div class=single-page-layout><div class=col-left></div><div class=col-center><header class=header><nav class=header-nav><div class=logo><a href=https://www.noxryn.cn/ accesskey=h title="Noxryn's Blog (Alt + H)">Noxryn's Blog</a></div><ul id=menu class=menu><li><a href=https://www.noxryn.cn/posts/ title=menu_posts><span>文章</span></a></li><li><a href=https://www.noxryn.cn/categories/ title=menu_categories><span>分类</span></a></li><li><a href=https://www.noxryn.cn/archives/ title=menu_archives><span>归档</span></a></li><li><a href=https://www.noxryn.cn/search/ title=menu_search><span>搜索</span></a></li><li><a href=https://www.noxryn.cn/about/ title=menu_about><span>关于</span></a></li></ul><div class=logo-switches><div class=logo-switches-inner><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><ul class=lang-menu><li><a href=https://www.noxryn.cn/en/ title=English aria-label=English><img class="lang-icon light" src=/images/map_n.svg alt=English width=14 height=14>
+<img class="lang-icon dark" src=/images/map_l.svg alt=English width=14 height=14></a></li></ul></div></div></nav></header><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>主页</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href>文章</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">Git 命令速览</h1><div class=post-meta><span title='2026-09-10 00:20:40 +0800 CST'>九月 10, 2026</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;376 字&nbsp;·&nbsp;Noxryn&nbsp;·&nbsp;</div><div class=post-tags-clamp><a href=https://www.noxryn.cn/tags/git/>Git</a></div></header><div class="post-content md-content"><h1 id=前言>前言<a hidden class=anchor aria-hidden=true href=#前言>#</a></h1><p>本文记录 Git 软件安装及使用命令。作为著名的版本控制工具之一，掌握少量命令即可自由使用 Git，满足普通项目的需求，更复杂的分支管理和自建远程库等流程笔者暂未涉及故不做提及；另一广泛使用的版本控制软件 SVN 更多依靠 GUI 界面，使用直观简单，了解 Git 后上手也毫无难度。</p><hr><h1 id=git是什么>Git是什么？<a hidden class=anchor aria-hidden=true href=#git是什么>#</a></h1><p>Git 是一个用于管理源代码的分布式版本控制系统。<br>版本控制系统会在您修改文件时记录并保存更改，使用户可以随时恢复以前的工作版本。使用 Git可以轻松访问源代码的修改历史记录以及更改的人，同时防止旧版本的无意覆盖。<br>简单来说，就是 Git 可以实现对代码的备份和恢复，不用手动进行复制管理。</p><h1 id=git命令速成>Git命令速成<a hidden class=anchor aria-hidden=true href=#git命令速成>#</a></h1><h2 id=1软件初始配置>1.软件初始配置<a hidden class=anchor aria-hidden=true href=#1软件初始配置>#</a></h2><pre tabindex=0><code>git config --global user.name &lt;用户名&gt; # 设置用户名
+git config --global user.email &lt;邮箱名&gt; # 设置邮箱
+git config --global core.excludesfile ~/.gitignore_global # 全局gitignore
+</code></pre><h2 id=2本地库管理>2.本地库管理<a hidden class=anchor aria-hidden=true href=#2本地库管理>#</a></h2><pre tabindex=0><code>git init # 初始本地库
+git status # 查看本地库状态
+git diff # 查看详细更新状态，尚未缓存的改动
+git diff --cached # 查看已缓存的改动
+git diff HEAD # 查看已缓存的与未缓存的所有改动
+git diff --stat # 显示摘要而非整个diff
+git add &lt;文件名&gt; # 添加暂存区
+git rm --cached &lt;文件名&gt; # 删除暂存区文件
+git mv &lt;old text&gt; &lt;new text&gt; # 移动或重命名一个文件、目录、软连接
+git commit -m &#34;&lt;日志信息&gt;&#34; &lt;文件名&gt; # 提交本地库
+</code></pre><h2 id=3查看历史记录>3.查看历史记录<a hidden class=anchor aria-hidden=true href=#3查看历史记录>#</a></h2><pre tabindex=0><code>git reflog
+git log [-options] # 详细信息
+   # –oneline # 查看历史记录的简洁版本
+   # –graph # 查看历史中什么时候出现了分支、合并
+   # –reverse # 逆向显示所有日志
+   # –author # 查找指定用户的提交日志
+   # –since、–before、 --until、–after # 定筛选日期
+   # –no-merges # 选项以隐藏合并提交
+</code></pre><h2 id=4标签>4.标签<a hidden class=anchor aria-hidden=true href=#4标签>#</a></h2><pre tabindex=0><code>git tag # 查看标签
+git tag -a vx.x # 创建标签
+git tag -a vx.x &lt;哈希值&gt; # 追加标签
+git tag -a &lt;tagname&gt; -m &#34;某某标签&#34;  # 指定标签信息
+git tag -s &lt;tagname&gt; -m &#34;某某标签&#34; # PGP签名标签
+</code></pre><h2 id=5分支管理>5.分支管理<a hidden class=anchor aria-hidden=true href=#5分支管理>#</a></h2><pre tabindex=0><code>git branch -v # 查看分支
+git branch &lt;分支名&gt; # 创建分支
+git branch -d  &lt;分支名&gt; # 删除分支
+git checkout &lt;分支名&gt; # 切换分支
+git checkout &lt;提交记录&gt; # 切换HEAD
+git checkout -b &lt;分支名&gt;  # 创建并切换分支
+git merge &lt;要合并的分支&gt;  # 合并分支,合并冲突解决后提交本地库时不加文件名
+git rebase &lt;分支名&gt; # 将当前分支复制到指定分支
+git cherry-pick &lt;哈希值&gt; &lt;哈希值&gt; # 将其它分支的指定提交记录复制到当前分支
+</code></pre><h2 id=6版本穿梭>6.版本穿梭<a hidden class=anchor aria-hidden=true href=#6版本穿梭>#</a></h2><pre tabindex=0><code>git reset --hard &lt;版本号&gt; //回退分支，取消已缓存的内容
+git checkout HEAD^ //移动到当前位置的父节点位置
+git branch -f &lt;分支名&gt; HEAD~num //移动分支到num前
+</code></pre><h2 id=7远程仓库管理>7.远程仓库管理<a hidden class=anchor aria-hidden=true href=#7远程仓库管理>#</a></h2><pre tabindex=0><code>git clone &lt;远程链接&gt; # 克隆仓库
+ssh -keygen -t rsa -C 远仓ssh地址 # git生成ssh公钥
+git remote -v # 查看远程库信息
+git remote add &lt;别名&gt; &lt;远程库地址&gt; # 关联远程库
+git remote remove &lt;远程库别名&gt; # 删除关联库
+git remote rename &lt;旧别名&gt; &lt;新别名&gt; # 修改关联库名称
+git remote set-url &lt;别名&gt; &lt;新链接&gt; # 重设远程库地址
+git push &lt;远程库别名&gt; &lt;分支名&gt;  # 推送远程库
+git pull &lt;远程库别名&gt; &lt;分支名&gt;  # 拉取远程库
+git fetch &lt;远程库别名&gt;  # 拉取远程库最新数据，不自动合并
+</code></pre><h2 id=8gitignore文件>8.gitignore文件<a hidden class=anchor aria-hidden=true href=#8gitignore文件>#</a></h2><p>gitignore文件用使Git忽略指定文件。</p><pre tabindex=0><code># VS Code
+.vscode/
+
+# C/C++
+*.d
+*.slo
+*.lo
+*.o
+*.obj
+*.gch
+*.pch
+*.so
+*.dylib
+*.dll
+*.mod  
+*.smod
+*.lai  
+*.la  
+*.a  
+*.lib
+*.exe  
+*.out  
+*.app
+/x64/
+/x86/
+
+# Java
+
+# zip
+*.zip
+*.tar.gz
+*.rar
+
+# obsidian
+.obsidian
+</code></pre><h1 id=日志提交规范>日志提交规范<a hidden class=anchor aria-hidden=true href=#日志提交规范>#</a></h1><p>commit message 格式：<code>&lt;typ>(&lt;scope>): &lt;subject></code></p><table><thead><tr><th>类型</th><th>介绍</th><th>脚注</th><th>功能</th></tr></thead><tbody><tr><td>feat</td><td>新增功能</td><td>merge</td><td>代码合并</td></tr><tr><td>fix</td><td>修复缺陷</td><td>sync</td><td>同步主线或分支的Bug</td></tr><tr><td>to</td><td>发现bug</td><td></td><td></td></tr><tr><td>docs</td><td>文档更新</td><td></td><td></td></tr><tr><td>style</td><td>格式更新</td><td>BREAKING CHANGE</td><td>破坏性修改</td></tr><tr><td>refactor</td><td>重构代码</td><td>Closes #<code>&lt;num></code></td><td>关闭issue</td></tr><tr><td>perf</td><td>性能优化</td><td></td><td></td></tr><tr><td>test</td><td>测试用例</td><td></td><td></td></tr><tr><td>chore</td><td>其它修改</td><td></td><td></td></tr><tr><td>ci</td><td>CI配置修改</td><td></td><td></td></tr><tr><td>build</td><td>构建系统变更</td><td></td><td></td></tr><tr><td>release</td><td>发布新版本</td><td></td><td></td></tr><tr><td>revert</td><td>回滚版本</td><td></td><td></td></tr></tbody></table><p>注：以上规范仅供参考，具体按照项目规范或公司要求确定！！！</p></div><footer class=post-footer><nav class=paginav><a class=next href=https://www.noxryn.cn/posts/python_learning/python_learning_basic/><span class=title>下一页 »</span>
+<span>Python 基础语法</span></a></nav></footer></article></div><div class=col-right><aside class=single-toc><details class=toc open><summary accesskey=c title="(Alt + C)"><span class=title>目录</span></summary><div class=inner><ul><li><a href=#%e5%89%8d%e8%a8%80 aria-label=前言>前言</a></li><li><a href=#git%e6%98%af%e4%bb%80%e4%b9%88 aria-label=Git是什么？>Git是什么？</a></li><li><a href=#git%e5%91%bd%e4%bb%a4%e9%80%9f%e6%88%90 aria-label=Git命令速成>Git命令速成</a><ul><li><a href=#1%e8%bd%af%e4%bb%b6%e5%88%9d%e5%a7%8b%e9%85%8d%e7%bd%ae aria-label=1.软件初始配置>1.软件初始配置</a></li><li><a href=#2%e6%9c%ac%e5%9c%b0%e5%ba%93%e7%ae%a1%e7%90%86 aria-label=2.本地库管理>2.本地库管理</a></li><li><a href=#3%e6%9f%a5%e7%9c%8b%e5%8e%86%e5%8f%b2%e8%ae%b0%e5%bd%95 aria-label=3.查看历史记录>3.查看历史记录</a></li><li><a href=#4%e6%a0%87%e7%ad%be aria-label=4.标签>4.标签</a></li><li><a href=#5%e5%88%86%e6%94%af%e7%ae%a1%e7%90%86 aria-label=5.分支管理>5.分支管理</a></li><li><a href=#6%e7%89%88%e6%9c%ac%e7%a9%bf%e6%a2%ad aria-label=6.版本穿梭>6.版本穿梭</a></li><li><a href=#7%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93%e7%ae%a1%e7%90%86 aria-label=7.远程仓库管理>7.远程仓库管理</a></li><li><a href=#8gitignore%e6%96%87%e4%bb%b6 aria-label=8.gitignore文件>8.gitignore文件</a></li></ul></li><li><a href=#%e6%97%a5%e5%bf%97%e6%8f%90%e4%ba%a4%e8%a7%84%e8%8c%83 aria-label=日志提交规范>日志提交规范</a></li></ul></div></details><script>(function(){var s,e=document.querySelector(".single-toc"),t=document.querySelector(".post-content")?.querySelectorAll("h1,h2,h3,h4,h5,h6"),n=t&&t[0];e&&n&&(s=n.getBoundingClientRect().top-e.getBoundingClientRect().top+100,e.style.marginTop=s+"px")})()</script></aside></div></div></main><footer class=footer><span>© 2026 Noxryn · <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/>CC BY-NC-SA 4.0</a></span> ·
+<span>Powered by
+<a href="https://gohugo.io/?utm_source=papermod" rel=noopener target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>(function(){var e=document.createElement("div");e.className="qq-toast",document.body.appendChild(e);function t(e){if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(e);else{var t=document.createElement("textarea");t.value=e,t.style.position="fixed",t.style.left="-9999px",document.body.appendChild(t),t.select();try{document.execCommand("copy")}catch{}document.body.removeChild(t)}}document.querySelectorAll(".qq-link").forEach(function(n){var s=!1;n.addEventListener("click",function(o){if(!s){o.preventDefault();var i=n.getAttribute("data-qq");t(i),e.textContent="已复制: "+i,e.classList.add("active"),setTimeout(function(){e.classList.remove("active")},2e3),s=!0}})})})()</script><script>let menu=document.getElementById("menu");if(menu){const n=localStorage.getItem("menu-scroll-position");n&&(menu.scrollLeft=parseInt(n,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)};let e=!1,s,o,t=!1;menu.addEventListener("mousedown",function(n){e=!0,t=!1,menu.classList.add("dragging"),s=n.pageX-menu.offsetLeft,o=menu.scrollLeft}),menu.addEventListener("mouseleave",function(){e=!1,menu.classList.remove("dragging")}),menu.addEventListener("mouseup",function(){e=!1,menu.classList.remove("dragging")}),menu.addEventListener("mousemove",function(n){if(!e)return;n.preventDefault();const a=n.pageX-menu.offsetLeft,i=(a-s)*1.5;(i<0?-i:i)>5&&(t=!0),menu.scrollLeft=o-i}),menu.addEventListener("click",function(e){t&&(e.preventDefault(),e.stopPropagation())})}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="复制";function s(){t.innerHTML="已复制！",setTimeout(()=>{t.innerHTML="复制"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
